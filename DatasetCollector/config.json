@@ -1,0 +1,7 @@
+{
+  "default_pair": "XBTUSD",
+  "default_interval": 1,
+  "default_rows": 2000,
+  "output_csv": "out/data.csv",
+  "raw_dir": "raw"
+}
