@@ -1,24 +1,3 @@
-"""
-collect_kraken_ohlc.py
-Autorský skript pro sběr reálných dat z Kraken API (OHLC).
-
-Výstupy:
-1) out/data.csv
-   - "bohatý" dataset s OHLCV + RSI + forward return + label
-
-2) out/simple_trades.csv  (BEZ HLAVIČKY)
-   - jednoduchý formát blízký "trade logu":
-     instrument,side,rsi,volume_category,day_part,label
-
-   Příklad řádku:
-   XBTUSD,long,62,high,evening,1
-
-Poznámka k obhajobě:
-- "side" a "label" nejsou skutečné obchody uživatele.
-  Jsou to signály + vyhodnocení, zda by signál vyšel podle reálného pohybu ceny.
-  To je legitimní ML úloha: predikce úspěšnosti signálu.
-"""
-
 from __future__ import annotations
 
 import argparse
