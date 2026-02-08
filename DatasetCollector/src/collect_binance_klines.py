@@ -1,27 +1,3 @@
-"""
-collect_binance_klines.py
-Autorský skript pro sběr reálných OHLCV dat z Binance Spot API (Klines/Candles).
-
-Proč Binance:
-- Kraken OHLC endpoint vrací max ~720 nejnovějších svíček a starší data neposkytne.
-- Binance klines endpoint umožňuje stránkování pomocí startTime, takže získáme 2000+ záznamů.
-
-Výstup:
-- out/data.csv (finální dataset)
-- raw/ (ukládá původní JSON odpovědi jako důkaz původu dat)
-
-Dataset obsahuje:
-timestamp_ms, datetime_utc, instrument, open, high, low, close, volume, rsi_14, direction, profit
-
-Definice "modelového obchodu" (vše odvozené z reálných dat):
-- direction podle RSI:
-    RSI <= 50 -> long
-    RSI > 50  -> short
-- profit (label 0/1) podle pohybu CLOSE za 1 další svíčku:
-    long:  1 když close(t+1) > close(t), jinak 0
-    short: 1 když close(t+1) < close(t), jinak 0
-"""
-
 from __future__ import annotations
 
 import argparse
